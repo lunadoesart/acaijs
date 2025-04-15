@@ -1,0 +1,51 @@
+{
+  "name": "acaijs",
+  "version": "1.0.0",
+  "description": "Blazingly fast Common API Interface using native libraries",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "bun": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir ./dist --target node",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:all": "bun run build && bun run build:types",
+    "test": "bun test",
+    "docs": "typedoc --skipErrorChecking --out docs src/index.ts"
+  },
+  "keywords": [
+    "api",
+    "http", 
+    "https",
+    "native",
+    "request",
+    "fetch",
+    "web",
+    "bun"
+  ],
+  "author": "Luna G. <luna@file-hosting.tech>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "typedoc": "^0.25.12"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lunerrrr/acaijs.git"
+  }
+}
